@@ -20,19 +20,18 @@ div.math {
     display: none;
     visibility: hidden;
     font-size: 14px;
-    padding-left: .3em;
 }
 .eqno:hover .headerlink {
     display: inline-block;
     visibility: hidden;
-    margin-right: -1.05em;
+    margin-right: -1.18em;
 }
 .eqno .headerlink:after {
     visibility: visible;
-    content: "\f0c1";
+    content: "\00a0\f0c1";
     font-family: FontAwesome;
     display: inline-block;
-    margin-left: -.9em;
+    margin-left: -.7em;
 }
 /* Make responsive */
 .MathJax_Display {
