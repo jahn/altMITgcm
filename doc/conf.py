@@ -31,8 +31,8 @@ sys.path.insert(0, os.path.join(os.path.abspath('.'), '_extensions'))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc',
-    'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
+    'sphinxcontrib.katex',
     'sphinxcontrib.bibtex',
     'mitgcm']
 
