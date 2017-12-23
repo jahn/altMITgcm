@@ -1,2 +1,3 @@
+git+https://github.com/jahn/sphinx.git@dev
+git+https://github.com/jahn/sphinxcontrib-katex@dev
 sphinxcontrib-bibtex
-sphinxcontrib-katex
