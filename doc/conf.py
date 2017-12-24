@@ -20,6 +20,8 @@ import os
 import sys
 sys.path.insert(0, os.path.join(os.path.abspath('.'), '_extensions'))
 
+import sphinxcontrib.katex as katex
+
 
 # -- General configuration ------------------------------------------------
 
@@ -121,6 +123,13 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+latex_macros=r'''
+    \def \p    #1{\frac{\partial }{\partial #1}}
+    \def \pp #1#2{\frac{\partial #1}{\partial #2}}
+    \def \dd #1#2{\frac{d #1}{d #2}}
+    \def \h      {\frac{1}{2}}
+'''
+katex_macros = katex.latex_defs_to_katex_macros(latex_macros)
 
 # -- Options for HTMLHelp output ------------------------------------------
 
@@ -144,11 +153,7 @@ latex_elements = {
     # 'preamble': '',
     'preamble': r'''
     \setcounter{secnumdepth}{3}
-    \newcommand{\p}[1]{\frac{\partial }{\partial #1}}
-    \newcommand{\pp}[2]{\frac{\partial #1}{\partial #2}}
-    \newcommand{\dd}[2]{\frac{d #1}{d #2}}
-    \newcommand{\h}{\frac{1}{2}}
-    ''',
+    ''' + latex_macros,
 
     # Latex figure (float) alignment
     #

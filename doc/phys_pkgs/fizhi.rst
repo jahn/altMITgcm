@@ -1,5 +1,3 @@
-.. include:: ../defs.hrst
-
 .. _sub_phys_pkg_fizhi:
 
 Fizhi: High-end Atmospheric Physics
