@@ -489,12 +489,10 @@ bounding :math:`\zeta` by a smooth (differentiable) expression:
 .. math::
    :label: eq_zetaregsmooth
 
-     \begin{split}
      \zeta &= \zeta_{\max}\tanh\left(\frac{P}{2\,\min(\Delta,\Delta_{\min})
          \,\zeta_{\max}}\right)\\
      &= \frac{P}{2\Delta^*}
      \tanh\left(\frac{\Delta^*}{\min(\Delta,\Delta_{\min})}\right) 
-     \end{split}
 
 where :math:`\Delta_{\text{min}}=10^{-20}\,\text{s}^{-1}` is chosen to avoid
 divisions by zero.
