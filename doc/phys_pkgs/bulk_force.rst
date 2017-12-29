@@ -140,9 +140,10 @@ Turbulent scales are:
 .. math::
 
    \begin{aligned}
-   u^* & = & c_u u_s \nonumber\\
-   T^* & = & c_T \Delta T \nonumber\\
-   q^* & = & c_q \Delta q \nonumber\end{aligned}
+   u^* & = c_u u_s \\
+   T^* & = c_T \Delta T \\
+   q^* & = c_q \Delta q
+   \end{aligned}
 
 We find the “integrated flux profile” for momentum and stability if
 there are stable QQ conditions (:math:`\Upsilon>0`) :
@@ -155,8 +156,8 @@ and for unstable QQ conditions (:math:`\Upsilon<0`):
 
    \begin{aligned}
    \psi_m & = & 2 ln(0.5(1+\chi)) + ln(0.5(1+\chi^2)) - 2 \tan^{-1} \chi + \pi/2
-   \nonumber \\
-   \psi_s & = & 2 ln(0.5(1+\chi^2)) \nonumber\end{aligned}
+   \\
+   \psi_s & = & 2 ln(0.5(1+\chi^2)) \end{aligned}
 
 where
 
@@ -172,8 +173,8 @@ The coefficients are updated through 5 iterations as:
 .. math::
 
    \begin{aligned}
-   c_u & = & \frac {\hat{c_u}}{1+\hat{c_u}(\lambda - \psi_m)/\kappa} \nonumber \\
-   c_T & = & \frac {\hat{c_T}}{1+\hat{c_T}(\lambda - \psi_s)/\kappa} \nonumber \\
+   c_u & = & \frac {\hat{c_u}}{1+\hat{c_u}(\lambda - \psi_m)/\kappa} \\
+   c_T & = & \frac {\hat{c_T}}{1+\hat{c_T}(\lambda - \psi_s)/\kappa} \\
    c_q & = & c'_T\end{aligned}
 
 where :math:`\lambda =ln(h_T/z_{ref})`.
@@ -201,9 +202,9 @@ to surface temperature
 .. math::
 
    \begin{aligned}
-   \frac{dQ_s}{d_T} & = & \rho_{air} c_{p_{air}} u_s c_u c_T \nonumber \\
-   \frac{dQ_l}{d_T} & = & \frac{\rho_{air} L^2 u_s c_u c_q c}{T_{srf}^2} \nonumber \\
-   \frac{dQ_{]lw}^{up}}{d_T} & = &  4 \epsilon \sigma t_{srf}^3 \nonumber\end{aligned}
+   \frac{dQ_s}{d_T} & = & \rho_{air} c_{p_{air}} u_s c_u c_T \\
+   \frac{dQ_l}{d_T} & = & \frac{\rho_{air} L^2 u_s c_u c_q c}{T_{srf}^2} \\
+   \frac{dQ_{]lw}^{up}}{d_T} & = &  4 \epsilon \sigma t_{srf}^3 \end{aligned}
 
 And total derivative :math:`\frac{dQ_o}{dT}= \frac{dQ_s}{dT} +
 \frac{dQ_l}{dT} + \frac{dQ_{lw}^{up}}{dT}`.

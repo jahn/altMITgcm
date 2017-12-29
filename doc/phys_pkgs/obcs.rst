@@ -278,25 +278,25 @@ the usual IEEE, big-endian files with dimensions of a section along an
 open boundary:
 
 -  For North/South boundary files the dimensions are
-   :math:`(N_x\times N_r\times\mbox{time levels})`, for East/West
+   :math:`(N_x\times N_r\times\text{time levels})`, for East/West
    boundary files the dimensions are
-   :math:`(N_y\times N_r\times\mbox{time levels})`.
+   :math:`(N_y\times N_r\times\text{time levels})`.
 
 -  If a non-linear free surface is used
    (\ref{sec:nonlinear-freesurface}), additional files
    :code:`OB[N/S/E/W]etaFile` for the sea surface height $\eta$ with
-   dimension :math:`(N_{x/y}\times\mbox{time levels})` may be specified.
+   dimension :math:`(N_{x/y}\times\text{time levels})` may be specified.
 
 - If non-hydrostatic dynamics are used
   (\ref{sec:non-hydrostatic}), additional files
   :code:`OB[N/S/E/W]wFile` for the vertical velocity $w$ with
-  dimensions :math:`(N_{x/y}\times N_r\times\mbox{time levels})` can be
+  dimensions :math:`(N_{x/y}\times N_r\times\text{time levels})` can be
   specified.
 
 - If :code:`useSEAICE=.TRUE.` then additional files
   :code:`OB[N/S/E/W][a,h,sl,sn,uice,vice]` for sea ice area, thickness
   (:code:`HEFF`), seaice salinity, snow and ice velocities
-  :math:`(N_{x/y}\times\mbox{time levels})` can be specified.
+  :math:`(N_{x/y}\times\text{time levels})` can be specified.
 
 As in :code:`S/R external\_fields\_load` or the :code:`exf`-package, the
 code reads two time levels for each variable, e.g.\ :code:`OBNu0` and
@@ -369,7 +369,7 @@ eastern or western boundary):
 
       \chi_{i_{b},j,k}^{n+1} =   \chi_{i_{b},j,k}^{n} + \Delta{t} 
         (u^{n+1}+c)_{i_{b},j,k}\frac{\chi_{i_{b},j,k}^{n}
-          - \chi_{i_{b}-1,j,k}^{n}}{\Delta{x}_{i_{b},j}^{C}}\mbox{, if }u_{i_{b},j,k}^{n+1}>0,
+          - \chi_{i_{b}-1,j,k}^{n}}{\Delta{x}_{i_{b},j}^{C}}\text{, if }u_{i_{b},j,k}^{n+1}>0,
 
    where :math:`i_{b}` is the boundary index.
    For test purposes, the phase velocity contribution or the entire
@@ -423,7 +423,7 @@ the western boundary at :math:`i=i_{b}`, the modified velocity is:
 
 .. math::
 
-   u(y,z) - \int_{\mbox{western boundary}}u\,dy\,dz \approx OBNu(j,k) - \sum_{j,k}
+   u(y,z) - \int_{\text{western boundary}}u\,dy\,dz \approx OBNu(j,k) - \sum_{j,k}
    OBNu(j,k) h_{w}(i_{b},j,k)\Delta{y_G(i_{b},j)}\Delta{z(k)}.
 
 This also ensures a net total inflow of zero through all boundaries, but
@@ -449,7 +449,7 @@ linearly with distance from the boundary
 
 .. math::
 
-   G_{\chi}^{\mbox{(sponge)}} = 
+   G_{\chi}^{\text{(sponge)}} = 
    - \frac{\chi - [( L - \delta{L} ) \chi_{BC} + \delta{L}\chi]/L}
    {[(L-\delta{L})\tau_{b}+\delta{L}\tau_{i}]/L} 
    = - \frac{\chi - [( 1 - l ) \chi_{BC} + l\chi]}

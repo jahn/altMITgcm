@@ -474,9 +474,9 @@ equal to :math:`2`; they are given by:
 
 The bulk viscosities are bounded above by imposing both a minimum
 :math:`\Delta_{\min}` (for numerical reasons, run-time parameter
-``SEAICE_EPS`` with a default value of :math:`10^{-10}\text{\,s}^{-1}`)
+``SEAICE_EPS`` with a default value of :math:`10^{-10}\,\text{s}^{-1}`)
 and a maximum :math:`\zeta_{\max} = P_{\max}/\Delta^*`, where
-:math:`\Delta^*=(5\times10^{12}/2\times10^4)\text{\,s}^{-1}`. (There
+:math:`\Delta^*=(5\times10^{12}/2\times10^4)\,\text{s}^{-1}`. (There
 is also the option of bounding :math:`\zeta` from below by setting
 run-time parameter ``SEAICE_zetaMin`` :math:`>0`, but this is generally not
 recommended). For stress tensor computation the replacement pressure
@@ -496,7 +496,7 @@ bounding :math:`\zeta` by a smooth (differentiable) expression:
      \tanh\left(\frac{\Delta^*}{\min(\Delta,\Delta_{\min})}\right) 
      \end{split}
 
-where :math:`\Delta_{\min}=10^{-20}\text{\,s}^{-1}` is chosen to avoid
+where :math:`\Delta_{\text{min}}=10^{-20}\,\text{s}^{-1}` is chosen to avoid
 divisions by zero.
 
 .. _para_phys_pkg_seaice_LSRJFNK:
@@ -696,19 +696,19 @@ the equations :eq:`eq_evpequation` can be written as:
      :label: eq_evpstresstensor1
 
      \frac{\partial\sigma_{1}}{\partial{t}} + \frac{\sigma_{1}}{2T} +
-     \frac{P}{2T} &= \frac{P}{2T\Delta} D_D
+     \frac{P}{2T} = \frac{P}{2T\Delta} D_D
 
 .. math::
      :label: eq_evpstresstensor2
 
      \frac{\partial\sigma_{2}}{\partial{t}} + \frac{\sigma_{2} e^{2}}{2T}
-     &= \frac{P}{2T\Delta} D_T
+     = \frac{P}{2T\Delta} D_T
 
 .. math::
      :label: eq_evpstresstensor12
 
      \frac{\partial\sigma_{12}}{\partial{t}} + \frac{\sigma_{12} e^{2}}{2T}
-     &= \frac{P}{4T\Delta} D_S
+     = \frac{P}{4T\Delta} D_S
 
 Here, the elastic parameter :math:`E` is redefined in terms of a damping
 timescale :math:`T` for elastic waves
@@ -758,14 +758,14 @@ and momentum :math:`\mathbf{u}` can be written as:
 .. math::
      :label: eq_evpstarsigma
 
-     \sigma_{ij}^{p+1}&=\sigma_{ij}^p+\frac{1}{\alpha}
+     \sigma_{ij}^{p+1}=\sigma_{ij}^p+\frac{1}{\alpha}
      \Big(\sigma_{ij}(\mathbf{u}^p)-\sigma_{ij}^p\Big),
      \phantom{\int}
 
 .. math::
      :label: eq_evpstarmom
 
-     \mathbf{u}^{p+1}&=\mathbf{u}^p+\frac{1}{\beta}
+     \mathbf{u}^{p+1}=\mathbf{u}^p+\frac{1}{\beta}
      \Big(\frac{\Delta t}{m}\nabla \cdot{\bf \sigma}^{p+1}+
      \frac{\Delta t}{m}\mathbf{R}^{p}+\mathbf{u}_n
      -\mathbf{u}^p\Big).
@@ -791,8 +791,8 @@ of :math:`\alpha` is set dynamically based on the stability criterion
 .. math::
    :label: eq_aevpalpha
 
-     \alpha = \beta = \max\left( \tilde{c}\pi\sqrt{c \frac{\zeta}{A_{c}}
-       \frac{\Delta{t}}{\max(m,10^{-4}\text{\,kg})}},\alpha_{\min} \right)
+     \alpha = \beta = \text{max}\left( \tilde{c}\pi\sqrt{c \frac{\zeta}{A_{c}}
+       \frac{\Delta{t}}{\text{max}(m,10^{-4}\,\text{kg})}},\alpha_{\min} \right)
 
 with the grid cell area :math:`A_c` and the ice and snow mass :math:`m`.
 This choice sacrifices speed of convergence for stability with the
@@ -872,18 +872,18 @@ are discretized as:
 .. math::
 
    \begin{aligned}
-     \dot{\epsilon}_{11} &= \partial_{1}{u}_{1} + k_{2}u_{2} \\ \notag
+     \dot{\epsilon}_{11} &= \partial_{1}{u}_{1} + k_{2}u_{2} \\
      => (\epsilon_{11})_{i,j}^C &= \frac{u_{i+1,j}-u_{i,j}}{\Delta{x}_{i,j}^{F}} 
       + k_{2,i,j}^{C}\frac{v_{i,j+1}+v_{i,j}}{2} \\ 
-     \dot{\epsilon}_{22} &= \partial_{2}{u}_{2} + k_{1}u_{1} \\\notag
+     \dot{\epsilon}_{22} &= \partial_{2}{u}_{2} + k_{1}u_{1} \\
      => (\epsilon_{22})_{i,j}^C &= \frac{v_{i,j+1}-v_{i,j}}{\Delta{y}_{i,j}^{F}} 
       + k_{1,i,j}^{C}\frac{u_{i+1,j}+u_{i,j}}{2} \\ 
       \dot{\epsilon}_{12} = \dot{\epsilon}_{21} &= \frac{1}{2}\biggl(
       \partial_{1}{u}_{2} + \partial_{2}{u}_{1} - k_{1}u_{2} - k_{2}u_{1}
-      \biggr) \\ \notag
+      \biggr) \\
      => (\epsilon_{12})_{i,j}^Z &= \frac{1}{2}
      \biggl( \frac{v_{i,j}-v_{i-1,j}}{\Delta{x}_{i,j}^V} 
-      + \frac{u_{i,j}-u_{i,j-1}}{\Delta{y}_{i,j}^U} \\\notag
+      + \frac{u_{i,j}-u_{i,j-1}}{\Delta{y}_{i,j}^U} \\
      &\phantom{=\frac{1}{2}\biggl(}
       - k_{1,i,j}^{Z}\frac{v_{i,j}+v_{i-1,j}}{2}
       - k_{2,i,j}^{Z}\frac{u_{i,j}+u_{i,j-1}}{2}
@@ -931,19 +931,19 @@ widths. For the :math:`u`-equation (:math:`\alpha=1`) we have:
      (\nabla\sigma)_{1}: \phantom{=}&
      \frac{1}{A_{i,j}^w}
      \int_{\mathrm{cell}}(\partial_1\sigma_{11}+\partial_2\sigma_{21})\,dx_1\,dx_2
-     \\\notag
+     \\
      =& \frac{1}{A_{i,j}^w} \biggl\{
      \int_{x_2}^{x_2+\Delta{x}_2}\sigma_{11}dx_2\biggl|_{x_{1}}^{x_{1}+\Delta{x}_{1}}
      + \int_{x_1}^{x_1+\Delta{x}_1}\sigma_{21}dx_1\biggl|_{x_{2}}^{x_{2}+\Delta{x}_{2}}
-     \biggr\} \\ \notag
+     \biggr\} \\
      \approx& \frac{1}{A_{i,j}^w} \biggl\{
      \Delta{x}_2\sigma_{11}\biggl|_{x_{1}}^{x_{1}+\Delta{x}_{1}}
      + \Delta{x}_1\sigma_{21}\biggl|_{x_{2}}^{x_{2}+\Delta{x}_{2}}
-     \biggr\} \\ \notag
+     \biggr\} \\
      =& \frac{1}{A_{i,j}^w} \biggl\{
      (\Delta{x}_2\sigma_{11})_{i,j}^C -
      (\Delta{x}_2\sigma_{11})_{i-1,j}^C 
-     \\\notag
+     \\
      \phantom{=}& \phantom{\frac{1}{A_{i,j}^w} \biggl\{}
      + (\Delta{x}_1\sigma_{21})_{i,j+1}^Z - (\Delta{x}_1\sigma_{21})_{i,j}^Z
      \biggr\}\end{aligned}
@@ -955,21 +955,21 @@ with
    \begin{aligned}
      (\Delta{x}_2\sigma_{11})_{i,j}^C =& \phantom{+}
      \Delta{y}_{i,j}^{F}(\zeta + \eta)^{C}_{i,j}
-     \frac{u_{i+1,j}-u_{i,j}}{\Delta{x}_{i,j}^{F}} \\ \notag
+     \frac{u_{i+1,j}-u_{i,j}}{\Delta{x}_{i,j}^{F}} \\
      &+ \Delta{y}_{i,j}^{F}(\zeta + \eta)^{C}_{i,j}
-     k_{2,i,j}^C \frac{v_{i,j+1}+v_{i,j}}{2} \\ \notag
+     k_{2,i,j}^C \frac{v_{i,j+1}+v_{i,j}}{2} \\
      \phantom{=}& + \Delta{y}_{i,j}^{F}(\zeta - \eta)^{C}_{i,j}
-     \frac{v_{i,j+1}-v_{i,j}}{\Delta{y}_{i,j}^{F}} \\ \notag
+     \frac{v_{i,j+1}-v_{i,j}}{\Delta{y}_{i,j}^{F}} \\
      \phantom{=}& + \Delta{y}_{i,j}^{F}(\zeta - \eta)^{C}_{i,j}
-     k_{1,i,j}^{C}\frac{u_{i+1,j}+u_{i,j}}{2} \\ \notag
+     k_{1,i,j}^{C}\frac{u_{i+1,j}+u_{i,j}}{2} \\
      \phantom{=}& - \Delta{y}_{i,j}^{F} \frac{P}{2} \\
      (\Delta{x}_1\sigma_{21})_{i,j}^Z =& \phantom{+}
      \Delta{x}_{i,j}^{V}\overline{\eta}^{Z}_{i,j}
-     \frac{u_{i,j}-u_{i,j-1}}{\Delta{y}_{i,j}^{U}} \\ \notag
+     \frac{u_{i,j}-u_{i,j-1}}{\Delta{y}_{i,j}^{U}} \\
      & + \Delta{x}_{i,j}^{V}\overline{\eta}^{Z}_{i,j}
-     \frac{v_{i,j}-v_{i-1,j}}{\Delta{x}_{i,j}^{V}} \\ \notag
+     \frac{v_{i,j}-v_{i-1,j}}{\Delta{x}_{i,j}^{V}} \\
      & - \Delta{x}_{i,j}^{V}\overline{\eta}^{Z}_{i,j} 
-     k_{2,i,j}^{Z}\frac{u_{i,j}+u_{i,j-1}}{2} \\ \notag
+     k_{2,i,j}^{Z}\frac{u_{i,j}+u_{i,j-1}}{2} \\
      & - \Delta{x}_{i,j}^{V}\overline{\eta}^{Z}_{i,j} 
      k_{1,i,j}^{Z}\frac{v_{i,j}+v_{i-1,j}}{2}\end{aligned}
 
@@ -981,18 +981,18 @@ Similarly, we have for the :math:`v`-equation (:math:`\alpha=2`):
      (\nabla\sigma)_{2}: \phantom{=}&
      \frac{1}{A_{i,j}^s}
      \int_{\mathrm{cell}}(\partial_1\sigma_{12}+\partial_2\sigma_{22})\,dx_1\,dx_2 
-     \\\notag
+     \\
      =& \frac{1}{A_{i,j}^s} \biggl\{
      \int_{x_2}^{x_2+\Delta{x}_2}\sigma_{12}dx_2\biggl|_{x_{1}}^{x_{1}+\Delta{x}_{1}}
      + \int_{x_1}^{x_1+\Delta{x}_1}\sigma_{22}dx_1\biggl|_{x_{2}}^{x_{2}+\Delta{x}_{2}}
-     \biggr\} \\ \notag
+     \biggr\} \\
      \approx& \frac{1}{A_{i,j}^s} \biggl\{
      \Delta{x}_2\sigma_{12}\biggl|_{x_{1}}^{x_{1}+\Delta{x}_{1}}
      + \Delta{x}_1\sigma_{22}\biggl|_{x_{2}}^{x_{2}+\Delta{x}_{2}}
-     \biggr\} \\ \notag
+     \biggr\} \\
      =& \frac{1}{A_{i,j}^s} \biggl\{
      (\Delta{x}_2\sigma_{12})_{i+1,j}^Z - (\Delta{x}_2\sigma_{12})_{i,j}^Z
-     \\ \notag
+     \\
      \phantom{=}& \phantom{\frac{1}{A_{i,j}^s} \biggl\{}
      + (\Delta{x}_1\sigma_{22})_{i,j}^C - (\Delta{x}_1\sigma_{22})_{i,j-1}^C
      \biggr\} \end{aligned}
@@ -1005,23 +1005,23 @@ with
      (\Delta{x}_1\sigma_{12})_{i,j}^Z =& \phantom{+}
      \Delta{y}_{i,j}^{U}\overline{\eta}^{Z}_{i,j}
      \frac{u_{i,j}-u_{i,j-1}}{\Delta{y}_{i,j}^{U}} 
-     \\\notag &
+     \\ &
      + \Delta{y}_{i,j}^{U}\overline{\eta}^{Z}_{i,j}
-     \frac{v_{i,j}-v_{i-1,j}}{\Delta{x}_{i,j}^{V}} \\\notag
+     \frac{v_{i,j}-v_{i-1,j}}{\Delta{x}_{i,j}^{V}} \\
      &- \Delta{y}_{i,j}^{U}\overline{\eta}^{Z}_{i,j}
      k_{2,i,j}^{Z}\frac{u_{i,j}+u_{i,j-1}}{2} 
-     \\\notag &
+     \\ &
      - \Delta{y}_{i,j}^{U}\overline{\eta}^{Z}_{i,j}
-     k_{1,i,j}^{Z}\frac{v_{i,j}+v_{i-1,j}}{2} \\ \notag
+     k_{1,i,j}^{Z}\frac{v_{i,j}+v_{i-1,j}}{2} \\
      (\Delta{x}_2\sigma_{22})_{i,j}^C =& \phantom{+}
      \Delta{x}_{i,j}^{F}(\zeta - \eta)^{C}_{i,j}
-     \frac{u_{i+1,j}-u_{i,j}}{\Delta{x}_{i,j}^{F}} \\ \notag
+     \frac{u_{i+1,j}-u_{i,j}}{\Delta{x}_{i,j}^{F}} \\
      &+ \Delta{x}_{i,j}^{F}(\zeta - \eta)^{C}_{i,j}
-     k_{2,i,j}^{C} \frac{v_{i,j+1}+v_{i,j}}{2} \\ \notag
+     k_{2,i,j}^{C} \frac{v_{i,j+1}+v_{i,j}}{2} \\
      & + \Delta{x}_{i,j}^{F}(\zeta + \eta)^{C}_{i,j}
-     \frac{v_{i,j+1}-v_{i,j}}{\Delta{y}_{i,j}^{F}} \\ \notag
+     \frac{v_{i,j+1}-v_{i,j}}{\Delta{y}_{i,j}^{F}} \\
      & + \Delta{x}_{i,j}^{F}(\zeta + \eta)^{C}_{i,j}
-     k_{1,i,j}^{C}\frac{u_{i+1,j}+u_{i,j}}{2} \\ \notag
+     k_{1,i,j}^{C}\frac{u_{i+1,j}+u_{i,j}}{2} \\
      & -\Delta{x}_{i,j}^{F} \frac{P}{2}\end{aligned}
 
 Again, no slip boundary conditions are realized via ghost points and
@@ -1056,7 +1056,7 @@ over a potentially very heterogeneous thickness distribution. In order
 to parameterize a sub-grid scale distribution for heat flux
 computations, the mean ice thickness :math:`h` is split into :math:`N`
 thickness categories :math:`H_{n}` that are equally distributed between
-:math:`2h` and a minimum imposed ice thickness of :math:`5\text{\,cm}`
+:math:`2h` and a minimum imposed ice thickness of :math:`5\,\text{cm}`
 by :math:`H_n= \frac{2n-1}{7}\,h` for :math:`n\in[1,N]`. The heat fluxes
 computed for each thickness category is area-averaged to give the total
 heat flux :cite:`hibler84`. To use this thickness category parameterization set ``SEAICE_multDim`` to the number of desired categories in ``data.seaice`` (7 is a good guess, for anything larger than 7 modify ``SEAICE_SIZE.h``); note that this requires different restart files and switching this flag on in the middle of an integration is not advised. In order to include the same distribution for snow, set ``SEAICE_useMultDimSnow = .TRUE.``; only then, the parameterization of always having a fraction of thin ice is efficient and generally thicker ice is produce :cite:`castro-morales14`.

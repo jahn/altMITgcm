@@ -427,14 +427,14 @@ super-saturation. Two values are used corresponding to cloud ice
 particles and water droplets. The range of optical thickness for these
 clouds is given as
 
-.. math:: 0.0002 \le \tau_{ice} (mb^{-1}) \le 0.002  \quad\mbox{for}\quad  0 \le \ell \le 2 \quad\mbox{mg/kg} ,
+.. math:: 0.0002 \le \tau_{ice} (mb^{-1}) \le 0.002  \quad\text{for}\quad  0 \le \ell \le 2 \quad\text{mg/kg} ,
 
-.. math:: 0.02 \le \tau_{h_2o} (mb^{-1}) \le 0.2  \quad\mbox{for}\quad  0 \le \ell \le 10 \quad\mbox{mg/kg} .
+.. math:: 0.02 \le \tau_{h_2o} (mb^{-1}) \le 0.2  \quad\text{for}\quad  0 \le \ell \le 10 \quad\text{mg/kg} .
 
 The partitioning, :math:`\alpha`, between ice particles and water
 droplets is achieved through a linear scaling in temperature:
 
-.. math:: 0 \le \alpha \le 1 \quad\mbox{for}\quad  233.15 \le T \le 253.15 .
+.. math:: 0 \le \alpha \le 1 \quad\text{for}\quad  233.15 \le T \le 253.15 .
 
 The resulting optical depth associated with large-scale cloudiness is
 given as
@@ -543,16 +543,16 @@ are expressed as
 .. math::
 
    K_h 
-    = \left\{ \begin{array}{l@{\quad\mbox{for}\quad}l} q \, \ell \, S_H(G_M,G_H) \, & \mbox{decaying turbulence}
-   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{H}(G_{M_e},G_{H_e}) \, & \mbox{growing turbulence} \end{array} \right.
+    = \begin{cases} q \, \ell \, S_H(G_M,G_H) \, & \text{decaying turbulence}
+   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{H}(G_{M_e},G_{H_e}) & \text{growing turbulence} \end{cases}
 
 and
 
 .. math::
 
    K_m
-    = \left\{ \begin{array}{l@{\quad\mbox{for}\quad}l} q \, \ell \, S_M(G_M,G_H) \, & \mbox{decaying turbulence}                
-   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{M}(G_{M_e},G_{H_e}) \, & \mbox{growing turbulence} \end{array} \right.
+    = \begin{cases} q \, \ell \, S_M(G_M,G_H) \, & \text{decaying turbulence}                
+   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{M}(G_{M_e},G_{H_e}) & \text{growing turbulence} \end{cases}
 
 where the subscript :math:`e` refers to the value under conditions of
 local equillibrium (obtained from the Level 2.0 Model), :math:`\ell` is
@@ -1409,8 +1409,8 @@ In the :cite:`helflab:88` adaptation of this closure, :math:`K_h` takes the form
 .. math::
 
    {\bf ET} = K_h = -\frac{( \overline{w^{\prime}\theta_v^{\prime}}) }{ \pp{\theta_v}{z} } 
-    = \left\{ \begin{array}{l@{\quad\mbox{for}\quad}l} q \, \ell \, S_H(G_M,G_H) & \mbox{decaying turbulence}
-   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{H}(G_{M_e},G_{H_e}) & \mbox{growing turbulence} \end{array} \right.
+    = \begin{cases} q \, \ell \, S_H(G_M,G_H) & \text{decaying turbulence}
+   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{H}(G_{M_e},G_{H_e}) & \text{growing turbulence} \end{cases}
 
 where :math:`q` is the turbulent velocity, or
 :math:`\sqrt{2*turbulent \hspace{.2cm} kinetic \hspace{.2cm} 
@@ -1451,8 +1451,8 @@ closure, :math:`K_m` takes the form:
 .. math::
 
    {\bf EU} = K_m = -\frac{( \overline{u^{\prime}w^{\prime}} ) }{ \pp{U}{z} }
-    = \left\{ \begin{array}{l@{\quad\mbox{for}\quad}l} q \, \ell \, S_M(G_M,G_H) & \mbox{decaying turbulence}
-   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{M}(G_{M_e},G_{H_e}) & \mbox{growing turbulence} \end{array} \right.
+    = \begin{cases} q \, \ell \, S_M(G_M,G_H) & \text{decaying turbulence}
+   \\ \frac{ q^2 }{ q_e } \, \ell \, S_{M}(G_{M_e},G_{H_e}) & \text{growing turbulence} \end{cases}
 
 where :math:`q` is the turbulent velocity, or
 :math:`\sqrt{2*turbulent \hspace{.2cm} kinetic \hspace{.2cm}

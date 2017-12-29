@@ -30,7 +30,8 @@ Discrete Numerical Configuration
 --------------------------------
 
 The domain is discretised with a uniform cylindrical grid spacing in
-the horizontal set to :math:`\Delta a=1`~cm and :math:`\Delta \phi=3^{\circ}`, so
+the horizontal set to :math:`\Delta a=1\,\mathrm{cm}` and
+:math:`\Delta \phi=3^{\circ}`, so
 that there are 120 grid cells in the azimuthal direction and
 thirty-one grid cells in the radial, representing a tank 62cm in
 diameter.  The bathymetry file sets the depth=0 in the nine lowest

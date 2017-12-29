@@ -95,11 +95,11 @@ Boundary conditions
 The upper and lower boundary conditions are:
 
 .. math::
-   \begin{aligned}\mbox{at the top:}\;\;p=0 &\text{,  }\omega =\frac{Dp}{Dt}=0\end{aligned}
+   \text{at the top:}\;\;p=0 \text{,  }\omega =\frac{Dp}{Dt}=0
    :label: boundary-condition-atmosphere-top
 
 .. math::
-   \begin{aligned}\mbox{at the surface:}\;\;p=p_{s} &\text{,  }\phi =\phi _{topo}=g~Z_{topo}\end{aligned}
+   \text{at the surface:}\;\;p=p_{s} \text{,  }\phi =\phi _{topo}=g~Z_{topo}
    :label: boundary-condition-atmosphere-bot
 
 In :math:`p-`\coordinates, the upper boundary acts like a solid boundary
@@ -134,8 +134,8 @@ horizontally homogeneous atmosphere at rest
 (:math:`\theta _{o},\alpha _{o},\phi_{o}`) with surface pressure :math:`p_{o}(x,y)` that satisfies
 :math:`\phi_{o}(p_{o})=g~Z_{topo}`, defined:
 
-.. math:: \theta _{o}(p) = f^{n}(p) \\
-.. math:: \alpha _{o}(p)  = \Pi _{p}\theta _{o} \\
+.. math:: \theta _{o}(p) = f^{n}(p)
+.. math:: \alpha _{o}(p)  = \Pi _{p}\theta _{o}
 .. math:: \phi _{o}(p)  = \phi _{topo}-\int_{p_{0}}^{p}\alpha _{o}dp
 
 The final form of the **HPE**’s in :math:`p-`\coordinates is then:

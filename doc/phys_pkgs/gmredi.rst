@@ -343,11 +343,11 @@ magnitude is simply restricted by an upper limit:
 .. math::
 
    \begin{aligned}
-   |\nabla \sigma| & = & \sqrt{ \sigma_x^2 + \sigma_y^2 } \\
-   S_{lim} & = & - \frac{|\nabla \sigma|}{ S_{max} }
-   \;\;\;\;\;\;\;\; \mbox{where $S_{max}$ is a parameter} \\
-   \sigma_z^\star & = & \min( \sigma_z , S_{lim} ) \\
-   {[s_x,s_y]} & = & - \frac{ [\sigma_x,\sigma_y] }{\sigma_z^\star}\end{aligned}
+   |\nabla \sigma| &= \sqrt{ \sigma_x^2 + \sigma_y^2 } \\
+   S_{lim} &= - \frac{|\nabla \sigma|}{ S_{max} }
+   \;\;\;\;\;\;\;\; \text{where $S_{max}$ is a parameter} \\
+   \sigma_z^\star &= \min( \sigma_z , S_{lim} ) \\
+   {[s_x,s_y]} &= - \frac{ [\sigma_x,\sigma_y] }{\sigma_z^\star}\end{aligned}
 
 Notice that this algorithm assumes stable stratification through the
 “min” function. In the case where the fluid is well stratified

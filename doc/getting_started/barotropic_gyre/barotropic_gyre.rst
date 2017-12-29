@@ -60,13 +60,13 @@ in this configuration as follows
     :label: eq_eg_baro_model_equations
 
     \frac{Du}{Dt} - fv + g\frac{\partial \eta}{\partial x} - A_{h}\nabla_{h}^2u
-     = & \frac{\tau_{x}}{\rho_{0}\Delta z}
+    &= \frac{\tau_{x}}{\rho_{0}\Delta z}
 
     \frac{Dv}{Dt} + fu + g\frac{\partial \eta}{\partial y} - A_{h}\nabla_{h}^2v
-     = & 0
+    &= 0
 
     \frac{\partial \eta}{\partial t} + \nabla_{h}\cdot \vec{u}
-     = & 0
+    &= 0
 
 
 where :math:`u` and :math:`v` and the :math:`x` and :math:`y` components of the

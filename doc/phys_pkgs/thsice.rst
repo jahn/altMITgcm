@@ -80,9 +80,9 @@ calculated as:
 .. math::
 
    \begin{aligned}
-   q_1 & = & -c_{i}*T_f + L_i \nonumber \\
-   q_2 & = & -c_{f}T_{mlt}+ c_{i}(T_{mlt}-T{f}) + L_i(1-\frac{T_{mlt}}{T_f})
-   \nonumber\end{aligned}
+   q_1 &= -c_{i}*T_f + L_i \\
+   q_2 &= -c_{f}T_{mlt}+ c_{i}(T_{mlt}-T{f}) + L_i(1-\frac{T_{mlt}}{T_f})
+   \end{aligned}
 
 where :math:`c_f` is specific heat of liquid fresh water, :math:`c_i` is
 the specific heat of fresh ice, :math:`L_i` is latent heat of freezing,
@@ -191,9 +191,9 @@ a unit mass of seaice with temperature :math:`T`. For the upper layer
 .. math::
 
    \begin{aligned}
-   q_1 & = & - c_f T_f + c_i (T_f-T)+ L_{i}(1-\frac{T_f}{T})
-   \nonumber \\
-   q_2 & = & -c_i T+L_i \nonumber\end{aligned}
+   q_1 &= - c_f T_f + c_i (T_f-T)+ L_{i}(1-\frac{T_f}{T})
+   \\
+   q_2 &= -c_i T+L_i \end{aligned}
 
 where :math:`c_f` is specific heat of liquid fresh water, :math:`c_i` is
 the specific heat of fresh ice, and :math:`L_i` is latent heat of
@@ -206,10 +206,10 @@ ocean-ice interface for either melting or freezing.
 .. math::
 
    \begin{aligned}
-   E_{top} &  =  & (F_s- K_{1/2}(T_s-T_1) ) \Delta t
-   \nonumber \\
-   E_{bot} &= & (\frac{4K_i(T_2-T_f)}{h_i}-F_b) \Delta t
-   \nonumber\end{aligned}
+   E_{top} &= (F_s- K_{1/2}(T_s-T_1) ) \Delta t
+   \\
+   E_{bot} &= (\frac{4K_i(T_2-T_f)}{h_i}-F_b) \Delta t
+   \end{aligned}
 
 where :math:`F_b` is the heat flux at the ice bottom due to the sea
 surface temperature variations from freezing. If :math:`T_{sst}` is
