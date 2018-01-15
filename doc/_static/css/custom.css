@@ -1,17 +1,16 @@
 /* Make equation numbers float to the right */
-.eqno {
-    margin-left: 5px;
+span.eqno {
     float: right;
+    margin-left: 0.5em;
 }
-/* Hide the link... */
-.math .headerlink {
-    display: none;
+/* Hide the link and avoid obscuring by math element */
+span.eqno a.headerlink {
     visibility: hidden;
+    position: relative;
+    left: 0px;
+    z-index: 1;
 }
-/* ...unless the equation is hovered */
-.math:hover .headerlink {
-    display: inline-block;
+/* Show if the equation is hovered */
+div.math:hover a.headerlink {
     visibility: visible;
-    /* Place link in margin and keep equation number aligned with boundary */
-    margin-right: -0.7em;
 }
